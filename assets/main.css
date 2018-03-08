@@ -136,6 +136,9 @@ img {
     html {
         font-size: 9px;
     }
+    .logo > img {
+        max-width: 90px;
+    }
     .grid__card.size_l {
         grid-template-areas:
                 'h h h'

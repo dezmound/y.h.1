@@ -22,7 +22,7 @@ class TemplateParserJson {
                     <img srcset="${ element.image.trim() ?
                     ['', '@2x', '@3x'].map(e=>element.image.replace(new RegExp(`\.(png|jpg|jpeg)`,'gi'), `${e}.$1 ${e.replace(/(@|x)/ig, '') * 320 || '320'}w`)) : ""
                     }" sizes="${ element.image.trim() ?
-                    [1, 2, 3].map(e => `(max-width: ${e * 320}px) ${e * 320}px`) : ''
+                    [1, 2, 3].map(e => `(max-width: ${e * 320 - 1}px) ${e * 320}px`) : ''
                     }" src="${ element.image }">
                     ` : '') + `
                     <div class="card__actions"><div class="more"></div><div class="like"></div></div></div>
@@ -36,7 +36,7 @@ class TemplateParserJson {
                     <img srcset="${ element.image.trim() ?
                             ['', '@2x', '@3x'].map(e=>element.image.replace(new RegExp(`\.(png|jpg|jpeg)`,'gi'), `${e}.$1 ${e.replace(/(@|x)/ig, '') * 320 || '320'}w`)) : ""
                     }" sizes="${ element.image.trim() ?
-                            [1, 2, 3].map(e => `(max-width: ${e * 320}px) ${e * 320}px`) : ''
+                            [1, 2, 3].map(e => `(max-width: ${e * 320 - 1}px) ${e * 320}px`) : ''
                     }" src="${ element.image }">
                     ` : '') + `
                     <div class="description">${element.description}<div class="card__actions"><div class="more"></div><div class="like"></div></div></div>
