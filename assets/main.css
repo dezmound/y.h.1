@@ -105,12 +105,12 @@ img {
     margin: auto 0 0;
 }
 .like {
-    background: url("Heart.png") center/cover;
+    background: url("Heart.svg") center/cover;
     width: 17px;
     height: 16px;
 }
 .more {
-    background: url("Actions.png") center/cover;
+    background: url("Actions.svg") center/cover;
     width: 14px;
     height: 4px;
 }
