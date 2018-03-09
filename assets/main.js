@@ -4,10 +4,11 @@ class TemplateParserJson {
         let elements = struct.map((e) => {
             let element = Object.assign({
                 title: "",
-                titleColor: '',
+                titleColor: "",
                 image: "",
                 description: "",
                 size: "",
+                channelName: ""
             }, e);
             if(!element.title.trim() || !element.size.trim()) {
                 return '';
@@ -39,7 +40,9 @@ class TemplateParserJson {
                             [1, 2, 3].map(e => `(max-width: ${e * 320 - 1}px) ${e * 320}px`) : ''
                     }" src="${ element.image }">
                     ` : '') + `
-                    <div class="description">${element.description}<div class="card__actions"><div class="more"></div><div class="like"></div></div></div>
+                    <div class="description">${element.description}<div class="card__actions ${ element.channelName.trim() ? 'card__actons_bottom' : '' }">
+                        ${ element.channelName.trim() ? `<div class="channel YSText-Bold">${ element.channelName }</div>` : '' }
+                    <div class="more"></div><div class="like"></div></div></div>
                 </div>
             `;
         });

@@ -92,7 +92,7 @@ img {
     bottom: 0;
 }
 .card__actions-wrapper > .card__actions, .grid__card.size_m .card__actions {
-    right: 0;
+    right: 10px;
     top: 0;
     height: 100%;
     width: 20px;
@@ -114,9 +114,18 @@ img {
     width: 14px;
     height: 4px;
 }
+.more:hover, .like:hover {
+    cursor: pointer;
+    filter: brightness(0.4);
+    -webkit-filter: brightness(0.4);
+}
+.channel + .more {
+    position: absolute;
+    right: 35px;
+}
 @media screen and (min-width: 1280px) {
     html {
-        font-size: 12px;
+        font-size: 11px;
     }
     .logo, .grid {
         width: calc(100% - 320px);
@@ -124,7 +133,17 @@ img {
 }
 @media screen and (min-width: 1600px) {
     html {
-        font-size: 18px;
+        font-size: 15px;
+    }
+    .more, .like {
+        transform: scale(1.5);
+    }
+    .grid__card:not(.size_m) .card__actions {
+        padding: 15px;
+    }
+    .channel + .more {
+        position: absolute;
+        right: 53px;
     }
 }
 @media screen and (max-width: 1280px) {
@@ -161,6 +180,10 @@ img {
     .grid__card.size_l .card__actions .like {
         margin-top: auto;
         margin-left: 0;
+    }
+    .grid__card.size_s .description .card__actions {
+        position: relative;
+        border: 0;
     }
 }
 @media screen and (max-width: 748px) {
@@ -200,7 +223,7 @@ img {
     .grid__card.size_s {
         grid-column: span 6;
     }
-    .grid__card.size_s .card__actions {
+    .grid__card.size_s .card__actions:not(.card__actons_bottom) {
         right: 0;
         top: 0;
         height: 100%;
@@ -212,8 +235,11 @@ img {
         padding-right: 20px;
         position: relative;
     }
-    .grid__card.size_s .card__actions .like {
+    .grid__card.size_s .card__actions:not(.card__actons_bottom) .like {
         margin-top: auto;
         margin-left: 0;
+    }
+    .grid__card.size_s .card__actions-wrapper > .card__actions:not(.card__actons_bottom) {
+        right: 10px;
     }
 }
